@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Kunden</title>
+</head>
+<body>
+<h1>Liste aller Kunden</h1>
+
+<p><a href="/">zur Startseite</a></p>
+
+<table border="1">
+	<tr>
+		<th>Kundennummer</th>
+		<th>Nachname</th>
+		<th>Vorname</th>
+	</tr>
+	<tr th:each="kunde:${kunden}">
+		<td><a th:href="'/kunde/' + ${kunde.kundennummer}" th:text="${kunde.kundennummer}"></a></td>
+		<td th:text="${kunde.nachname}"></td>
+		<td th:text="${kunde.vorname}"></td>
+	</tr>
+	
+</table></body>
+</html>
